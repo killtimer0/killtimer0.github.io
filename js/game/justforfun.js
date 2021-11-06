@@ -51,18 +51,17 @@ function initEscapeObj(name, href, width, height, tl){
 		}else obj.style.left = px(_nx), obj.style.top = px(_ny);
 	}
 	function hitTest(px, py, cx, cy){
-		if (cx === undefined) cx = x, cy = y;
-		return px >= cx && py < cy && px < cx + tWidth && py >= cy - tHeight;
+		return px >= cx && py >= cy && px < cx + tWidth && py < cy + tHeight;
 	}
 	function calcNewPos(px, py){
 		var nx, ny; do{
 			nx = Math.random() * (width - 2 * bWidth - tWidth) + bWidth, ny = Math.random() * (height - 2 * bHeight - tHeight) + bHeight;
-		} while (hitTest(px, py, nx, ny));
+		}while (hitTest(px, py, nx, ny));
 		ox = x, oy = y;
 		update(true, nx, ny);
 	}
 	function onMove(e){
-		var px = e.offsetX + x, py = e.offsetY + y;
+		var px = e.offsetX, py = e.offsetY;
 		if (inEasing){
 			if (process * pp2 >= period) inEasing = false, cancelAnimationFrame(raf);
 		}else{
