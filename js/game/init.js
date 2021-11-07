@@ -1,4 +1,5 @@
 var parent = 'game-container';
+var id = 'game_board';
 var games = [
 	function(){
 		window.game = new CatchTheCatGame({
@@ -12,8 +13,10 @@ var games = [
 		});
 	},
 	function(){
-	  document.getElementById(parent).innerHTML = '<canvas id="game_board" width="512" height="540">Not support.</canvas>';
-	  loadGame('game_board');
+	  var obj = document.createElement('canvas');
+	  obj.id = id, obj.width = 512, obj.height = 540;
+	  document.getElementById(parent).appendChild(obj);
+	  loadGame(id);
 	},
 	function(){
 		init2048Game('game-container');

@@ -216,17 +216,17 @@ function init2048Game(idParent) {
 			// Needed to prevent undefined behavior on Android devices
 			event.preventDefault();
 			
-			event.changedTouches = event.changedTouches || [{ pageX: 0, pageY: 0 }];
+			//event.changedTouches = event.changedTouches || [{ pageX: 0, pageY: 0 }];
 			var touch = event.changedTouches[0];
 
 			startCoordinates.x = touch.pageX;
 			startCoordinates.y = touch.pageY;
-		});
+		}, { passive: false });
 		addEventListener("touchend", function(event) {
 			// Needed to prevent undefined behavior on Android devices
 			event.preventDefault();
 
-			event.changedTouches = event.changedTouches || [{ pageX: 0, pageY: 0 }];
+			//event.changedTouches = event.changedTouches || [{ pageX: 0, pageY: 0 }];
 			var touch = event.changedTouches[0];
 
 			// Get the horizontal and vertical differences
@@ -256,7 +256,7 @@ function init2048Game(idParent) {
 					direction = "DOWN";
 				}
 			}
-		});
+		}, { passive: false });
 
 		var Input = {
 			getCommand: function() {
