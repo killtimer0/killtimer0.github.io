@@ -36,7 +36,7 @@ function initEscapeObj(name, ratio, href, tl){
 			obj.style.userSelect = obj.style.transition = 'none';
 			window.addEventListener("resize", onResize);
 			obj.addEventListener("click", function(e){e.preventDefault();});
-			obj.addEventListener("mousedown", onMove);
+			obj.addEventListener("touchstart", onMove);
 			obj.addEventListener("mousemove", onMove);
 			div.appendChild(obj);
 		}
