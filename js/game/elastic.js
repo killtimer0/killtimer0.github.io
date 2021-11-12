@@ -1,7 +1,7 @@
 /* 真·彩蛋 */
 
 var delta = 20, period = 1000, border = 0;
-var pp1 = 8, pp2 = 6, pmin = 0.288;
+var pp1 = 8, pp2 = 6, pmin = 0.1;
 
 function px(val){return val + 'px';}
 function borderf(ttl, rate){return rate * ttl / (2 * rate + 1);}
