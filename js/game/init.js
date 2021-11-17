@@ -13,10 +13,10 @@ var games = [
 		});
 	},
 	function(){
-		loadGobangGame(parent,15,576,180,'/js/game/gobang.min.js',function(bg,bd,fb,tb){
+		loadGobangGame(parent,'/js/game/gobang.min.js',function(bg,bd,fb,tb){
 			bg.style.backgroundImage="url('/pictures/game/bg.jpg')",
 			bd.style.backgroundImage="url('/pictures/game/board.jpg')"
-		});
+		}, {lineColor: '#333'});
 	},
 	function(){
 		init2048Game('game-container');
