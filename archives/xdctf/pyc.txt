@@ -1,0 +1,352 @@
+  1           0 LOAD_BUILD_CLASS
+              2 LOAD_CONST               0 (<code object DataFrame at 0x000001EFDC50D790, file "Flag.py", line 1>)
+              4 LOAD_CONST               1 ('DataFrame')
+              6 MAKE_FUNCTION            0
+              8 LOAD_CONST               1 ('DataFrame')
+             10 LOAD_NAME                0 (object)
+             12 CALL_FUNCTION            3
+             14 STORE_NAME               1 (DataFrame)
+             16 LOAD_CONST               2 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object DataFrame at 0x000001EFDC50D790, file "Flag.py", line 1>:
+  1           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('DataFrame')
+              6 STORE_NAME               2 (__qualname__)
+
+  2           8 LOAD_CONST               1 (<code object __init__ at 0x000001EFDC50D630, file "Flag.py", line 2>)
+             10 LOAD_CONST               2 ('DataFrame.__init__')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+  7          16 LOAD_CONST               3 (<code object enc at 0x000001EFDC50D6E0, file "Flag.py", line 7>)
+             18 LOAD_CONST               4 ('DataFrame.enc')
+             20 MAKE_FUNCTION            0
+             22 STORE_NAME               4 (enc)
+             24 LOAD_CONST               5 (None)
+             26 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x000001EFDC50D630, file "Flag.py", line 2>:
+  3           0 LOAD_CONST               1 (<code object <lambda> at 0x000001EFDC4F3260, file "Flag.py", line 3>)
+              2 LOAD_CONST               2 ('DataFrame.__init__.<locals>.<lambda>')
+              4 MAKE_FUNCTION            0
+              6 LOAD_FAST                1 (flag)
+              8 CALL_FUNCTION            1
+             10 LOAD_FAST                0 (self)
+             12 STORE_ATTR               0 (flag)
+
+  4          14 LOAD_CONST               3 (0)
+             16 BUILD_LIST               1
+             18 LOAD_GLOBAL              1 (len)
+             20 LOAD_FAST                0 (self)
+             22 LOAD_ATTR                0 (flag)
+             24 CALL_FUNCTION            1
+             26 BINARY_MULTIPLY
+             28 LOAD_FAST                0 (self)
+             30 STORE_ATTR               2 (matrix)
+
+  5          32 LOAD_CONST               4 ('trackonyou')
+             34 LOAD_FAST                0 (self)
+             36 STORE_ATTR               3 (key)
+             38 LOAD_CONST               0 (None)
+             40 RETURN_VALUE
+
+Disassembly of <code object <lambda> at 0x000001EFDC4F3260, file "Flag.py", line 3>:
+  3           0 LOAD_FAST                0 (data)
+              2 LOAD_GLOBAL              0 (bytes)
+              4 LOAD_CONST               1 (16)
+              6 LOAD_GLOBAL              1 (len)
+              8 LOAD_FAST                0 (data)
+             10 CALL_FUNCTION            1
+             12 LOAD_CONST               1 (16)
+             14 BINARY_MODULO
+             16 BINARY_SUBTRACT
+             18 BUILD_LIST               1
+             20 LOAD_CONST               1 (16)
+             22 LOAD_GLOBAL              1 (len)
+             24 LOAD_FAST                0 (data)
+             26 CALL_FUNCTION            1
+             28 LOAD_CONST               1 (16)
+             30 BINARY_MODULO
+             32 BINARY_SUBTRACT
+             34 BINARY_MULTIPLY
+             36 CALL_FUNCTION            1
+             38 BINARY_ADD
+             40 RETURN_VALUE
+
+Disassembly of <code object enc at 0x000001EFDC50D6E0, file "Flag.py", line 7>:
+  8           0 BUILD_LIST               0
+              2 STORE_FAST               1 (S)
+
+  9           4 BUILD_LIST               0
+              6 STORE_FAST               2 (T)
+
+ 10           8 LOAD_CONST               1 (0)
+             10 BUILD_LIST               1
+             12 LOAD_CONST               2 (64)
+             14 BINARY_MULTIPLY
+             16 STORE_FAST               3 (NEW)
+
+ 11          18 LOAD_GLOBAL              0 (list)
+             20 LOAD_FAST                0 (self)
+             22 LOAD_ATTR                1 (flag)
+             24 CALL_FUNCTION            1
+             26 STORE_FAST               4 (sec_to_plain)
+
+ 12          28 LOAD_GLOBAL              2 (range)
+             30 LOAD_CONST               3 (256)
+             32 CALL_FUNCTION            1
+             34 GET_ITER
+        >>   36 FOR_ITER                24 (to 86)
+             38 STORE_FAST               5 (i)
+
+ 13          40 LOAD_FAST                1 (S)
+             42 LOAD_METHOD              3 (append)
+             44 LOAD_CONST               4 (255)
+             46 LOAD_FAST                5 (i)
+             48 BINARY_SUBTRACT
+             50 CALL_METHOD              1
+             52 POP_TOP
+
+ 14          54 LOAD_FAST                2 (T)
+             56 LOAD_METHOD              3 (append)
+             58 LOAD_GLOBAL              4 (ord)
+             60 LOAD_FAST                0 (self)
+             62 LOAD_ATTR                5 (key)
+             64 LOAD_FAST                5 (i)
+             66 LOAD_GLOBAL              6 (len)
+             68 LOAD_FAST                0 (self)
+             70 LOAD_ATTR                5 (key)
+             72 CALL_FUNCTION            1
+             74 BINARY_MODULO
+             76 BINARY_SUBSCR
+             78 CALL_FUNCTION            1
+             80 CALL_METHOD              1
+             82 POP_TOP
+             84 JUMP_ABSOLUTE           18 (to 36)
+
+ 16     >>   86 LOAD_CONST               1 (0)
+             88 STORE_FAST               6 (j)
+
+ 17          90 LOAD_GLOBAL              2 (range)
+             92 LOAD_CONST               3 (256)
+             94 CALL_FUNCTION            1
+             96 GET_ITER
+        >>   98 FOR_ITER                27 (to 154)
+            100 STORE_FAST               5 (i)
+
+ 18         102 LOAD_FAST                6 (j)
+            104 LOAD_FAST                1 (S)
+            106 LOAD_FAST                5 (i)
+            108 BINARY_SUBSCR
+            110 BINARY_ADD
+            112 LOAD_FAST                2 (T)
+            114 LOAD_FAST                5 (i)
+            116 BINARY_SUBSCR
+            118 BINARY_ADD
+            120 LOAD_CONST               3 (256)
+            122 BINARY_MODULO
+            124 STORE_FAST               6 (j)
+
+ 19         126 LOAD_FAST                1 (S)
+            128 LOAD_FAST                6 (j)
+            130 BINARY_SUBSCR
+            132 LOAD_FAST                1 (S)
+            134 LOAD_FAST                5 (i)
+            136 BINARY_SUBSCR
+            138 ROT_TWO
+            140 LOAD_FAST                1 (S)
+            142 LOAD_FAST                5 (i)
+            144 STORE_SUBSCR
+            146 LOAD_FAST                1 (S)
+            148 LOAD_FAST                6 (j)
+            150 STORE_SUBSCR
+            152 JUMP_ABSOLUTE           49 (to 98)
+
+ 21     >>  154 LOAD_GLOBAL              2 (range)
+            156 LOAD_CONST               5 (10)
+            158 CALL_FUNCTION            1
+            160 GET_ITER
+        >>  162 FOR_ITER               154 (to 472)
+            164 STORE_FAST               7 (cnt)
+
+ 23         166 LOAD_GLOBAL              2 (range)
+            168 LOAD_CONST               2 (64)
+            170 CALL_FUNCTION            1
+            172 GET_ITER
+        >>  174 FOR_ITER                10 (to 196)
+            176 STORE_FAST               5 (i)
+
+ 24         178 LOAD_FAST                1 (S)
+            180 LOAD_FAST                4 (sec_to_plain)
+            182 LOAD_FAST                5 (i)
+            184 BINARY_SUBSCR
+            186 BINARY_SUBSCR
+            188 LOAD_FAST                4 (sec_to_plain)
+            190 LOAD_FAST                5 (i)
+            192 STORE_SUBSCR
+            194 JUMP_ABSOLUTE           87 (to 174)
+
+ 27     >>  196 LOAD_GLOBAL              2 (range)
+            198 LOAD_CONST               6 (8)
+            200 CALL_FUNCTION            1
+            202 GET_ITER
+        >>  204 FOR_ITER               112 (to 430)
+            206 STORE_FAST               5 (i)
+
+ 28         208 LOAD_GLOBAL              2 (range)
+            210 LOAD_CONST               6 (8)
+            212 CALL_FUNCTION            1
+            214 GET_ITER
+        >>  216 FOR_ITER                31 (to 280)
+            218 STORE_FAST               6 (j)
+
+ 29         220 LOAD_FAST                4 (sec_to_plain)
+            222 LOAD_CONST               6 (8)
+            224 LOAD_FAST                5 (i)
+            226 BINARY_MULTIPLY
+            228 LOAD_FAST                6 (j)
+            230 BINARY_ADD
+            232 BINARY_SUBSCR
+            234 STORE_FAST               8 (tmp)
+
+ 30         236 LOAD_GLOBAL              2 (range)
+            238 LOAD_CONST               6 (8)
+            240 CALL_FUNCTION            1
+            242 GET_ITER
+        >>  244 FOR_ITER                16 (to 278)
+            246 STORE_FAST               9 (k)
+
+ 31         248 LOAD_FAST                8 (tmp)
+            250 LOAD_CONST               7 (2)
+            252 BINARY_MODULO
+            254 LOAD_FAST                3 (NEW)
+            256 LOAD_FAST                9 (k)
+            258 LOAD_CONST               6 (8)
+            260 LOAD_FAST                6 (j)
+            262 BINARY_MULTIPLY
+            264 BINARY_ADD
+            266 STORE_SUBSCR
+
+ 32         268 LOAD_FAST                8 (tmp)
+            270 LOAD_CONST               7 (2)
+            272 INPLACE_FLOOR_DIVIDE
+            274 STORE_FAST               8 (tmp)
+            276 JUMP_ABSOLUTE          122 (to 244)
+
+ 30     >>  278 JUMP_ABSOLUTE          108 (to 216)
+
+ 33     >>  280 LOAD_GLOBAL              2 (range)
+            282 LOAD_CONST               2 (64)
+            284 CALL_FUNCTION            1
+            286 GET_ITER
+        >>  288 FOR_ITER                25 (to 340)
+            290 STORE_FAST               6 (j)
+
+ 34         292 LOAD_FAST                6 (j)
+            294 LOAD_FAST                6 (j)
+            296 BINARY_MULTIPLY
+            298 LOAD_FAST                6 (j)
+            300 BINARY_MULTIPLY
+            302 LOAD_CONST               8 (67)
+            304 BINARY_MODULO
+            306 LOAD_CONST               2 (64)
+            308 BINARY_MODULO
+            310 STORE_FAST              10 (res)
+
+ 35         312 LOAD_FAST                3 (NEW)
+            314 LOAD_FAST                6 (j)
+            316 BINARY_SUBSCR
+            318 LOAD_FAST                3 (NEW)
+            320 LOAD_FAST               10 (res)
+            322 BINARY_SUBSCR
+            324 ROT_TWO
+            326 LOAD_FAST                3 (NEW)
+            328 LOAD_FAST               10 (res)
+            330 STORE_SUBSCR
+            332 LOAD_FAST                3 (NEW)
+            334 LOAD_FAST                6 (j)
+            336 STORE_SUBSCR
+            338 JUMP_ABSOLUTE          144 (to 288)
+
+ 36     >>  340 LOAD_GLOBAL              2 (range)
+            342 LOAD_CONST               6 (8)
+            344 CALL_FUNCTION            1
+            346 GET_ITER
+        >>  348 FOR_ITER                39 (to 428)
+            350 STORE_FAST               6 (j)
+
+ 37         352 LOAD_CONST               1 (0)
+            354 STORE_FAST              11 (v78)
+
+ 38         356 LOAD_CONST               9 (1)
+            358 STORE_FAST              12 (v74)
+
+ 39         360 LOAD_GLOBAL              2 (range)
+            362 LOAD_CONST               6 (8)
+            364 CALL_FUNCTION            1
+            366 GET_ITER
+        >>  368 FOR_ITER                18 (to 406)
+            370 STORE_FAST               9 (k)
+
+ 40         372 LOAD_FAST               11 (v78)
+            374 LOAD_FAST                3 (NEW)
+            376 LOAD_FAST                9 (k)
+            378 LOAD_CONST               6 (8)
+            380 LOAD_FAST                6 (j)
+            382 BINARY_MULTIPLY
+            384 BINARY_ADD
+            386 BINARY_SUBSCR
+            388 LOAD_FAST               12 (v74)
+            390 BINARY_MULTIPLY
+            392 INPLACE_OR
+            394 STORE_FAST              11 (v78)
+
+ 41         396 LOAD_FAST               12 (v74)
+            398 LOAD_CONST               7 (2)
+            400 INPLACE_MULTIPLY
+            402 STORE_FAST              12 (v74)
+            404 JUMP_ABSOLUTE          184 (to 368)
+
+ 42     >>  406 LOAD_FAST                6 (j)
+            408 LOAD_CONST               6 (8)
+            410 LOAD_FAST                5 (i)
+            412 BINARY_MULTIPLY
+            414 BINARY_ADD
+            416 STORE_FAST              13 (v70)
+
+ 43         418 LOAD_FAST               11 (v78)
+            420 LOAD_FAST                4 (sec_to_plain)
+            422 LOAD_FAST               13 (v70)
+            424 STORE_SUBSCR
+            426 JUMP_ABSOLUTE          174 (to 348)
+
+ 36     >>  428 JUMP_ABSOLUTE          102 (to 204)
+
+ 45     >>  430 LOAD_GLOBAL              2 (range)
+            432 LOAD_CONST               2 (64)
+            434 CALL_FUNCTION            1
+            436 GET_ITER
+        >>  438 FOR_ITER                15 (to 470)
+            440 STORE_FAST               5 (i)
+
+ 46         442 LOAD_FAST                4 (sec_to_plain)
+            444 LOAD_FAST                5 (i)
+            446 DUP_TOP_TWO
+            448 BINARY_SUBSCR
+            450 LOAD_GLOBAL              4 (ord)
+            452 LOAD_FAST                0 (self)
+            454 LOAD_ATTR                5 (key)
+            456 LOAD_FAST                7 (cnt)
+            458 BINARY_SUBSCR
+            460 CALL_FUNCTION            1
+            462 INPLACE_XOR
+            464 ROT_THREE
+            466 STORE_SUBSCR
+            468 JUMP_ABSOLUTE          219 (to 438)
+
+ 45     >>  470 JUMP_ABSOLUTE           81 (to 162)
+
+ 48     >>  472 LOAD_FAST                4 (sec_to_plain)
+            474 RETURN_VALUE
